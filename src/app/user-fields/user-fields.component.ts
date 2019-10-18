@@ -9,6 +9,7 @@ import { UserService } from "../user.service";
   styleUrls: ["./user-fields.component.scss"]
 })
 export class UserFieldsComponent implements OnInit {
+  hide = true;
   userForm: FormGroup;
   user: User = {
     id: 1,

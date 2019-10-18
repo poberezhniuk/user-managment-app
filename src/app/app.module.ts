@@ -36,7 +36,7 @@ import { UserFieldsComponent } from "./user-fields/user-fields.component";
     HomeComponent,
     SingupComponent,
     TopNavigationComponent,
-    UserFieldsComponentta
+    UserFieldsComponent
   ],
 
   imports: [

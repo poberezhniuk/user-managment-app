@@ -16,7 +16,6 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   private handleError(error: any) {
-    console.log(error);
     return throwError(error);
   }
 
