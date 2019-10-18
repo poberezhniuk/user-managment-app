@@ -1,0 +1,59 @@
+<div class="user-fields__container" [formGroup]="userForm">
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="Name" maxlength="30" />
+    <mat-error *ngIf="userControls.name.invalid">{{
+      getErrorMessage("name")
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="surname"
+      placeholder="Surname"
+      maxlength="30"
+    />
+    <mat-error *ngIf="userControls.surname.invalid">{{
+      getErrorMessage("surname")
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="email"
+      placeholder="Email"
+      maxlength="30"
+    />
+    <mat-error *ngIf="userControls.email.invalid">{{
+      getErrorMessage("email")
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      maxlength="30"
+      formControlName="password"
+      placeholder="Password"
+      [type]="hide ? 'text' : 'password'"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+    </button>
+    <mat-error *ngIf="userControls.password.invalid">{{
+      getErrorMessage("password")
+    }}</mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="userForm.invalid"
+    (click)="addUser()"
+  >
+    Confirm
+  </button>
+</div>
