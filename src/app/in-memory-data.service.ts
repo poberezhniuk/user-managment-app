@@ -23,7 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
         password: "gravitation"
       },
       {
-        id: 1,
+        id: 2,
         name: "Galileo",
         surname: "Galilei",
         email: "galileogalilei@gmail.com",
@@ -33,4 +33,8 @@ export class InMemoryDataService implements InMemoryDbService {
 
     return { users };
   }
+
+  // genId(users: User[]): number {
+  //   return users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 0;
+  // }
 }

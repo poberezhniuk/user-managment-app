@@ -11,7 +11,7 @@ import { HomeComponent } from "./home/home.component";
 import { SingupComponent } from "./singup/singup.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {
   MatTableModule,
   MatSortModule,
@@ -27,6 +27,9 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
 import { UserFieldsComponent } from "./user-fields/user-fields.component";
+import { InMemoryDataService } from "./in-memory-data.service";
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -55,8 +58,18 @@ import { UserFieldsComponent } from "./user-fields/user-fields.component";
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientInMemoryWebApiModule,
-    HttpClientModule
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false
+    }),
+    HttpClientModule,
+    FormsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
