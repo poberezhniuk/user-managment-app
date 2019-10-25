@@ -22,14 +22,15 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
 import { UserFieldsComponent } from "./user-fields/user-fields.component";
 import { InMemoryDataService } from "./in-memory-data.service";
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { StoreModule } from "@ngrx/store";
+import { reducers, metaReducers } from "./reducers";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { reducers, metaReducers } from './reducers';
   ],
 
   imports: [
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
