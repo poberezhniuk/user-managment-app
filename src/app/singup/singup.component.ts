@@ -53,10 +53,6 @@ export class SingupComponent implements OnInit {
   }
 
   addUser() {
-    if (this.userForm.invalid) {
-      return;
-    } else {
-      this.userService.addUser(this.user);
-    }
+    this.userService.addUser(this.user);
   }
 }
