@@ -37,6 +37,7 @@ export class UserFieldsComponent implements OnInit {
         ]
       ]
     });
+    console.log(this.userForm);
   }
 
   get userControls() {

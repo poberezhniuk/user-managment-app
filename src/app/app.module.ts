@@ -31,6 +31,8 @@ import { UserFieldsComponent } from "./user-fields/user-fields.component";
 import { InMemoryDataService } from "./in-memory-data.service";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./reducers";
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { reducers, metaReducers } from "./reducers";
     HomeComponent,
     SingupComponent,
     TopNavigationComponent,
-    UserFieldsComponent
+    UserFieldsComponent,
+    EditDialogComponent,
+    UserProfileComponent
   ],
 
   imports: [

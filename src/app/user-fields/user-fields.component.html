@@ -48,12 +48,7 @@
       getErrorMessage("password")
     }}</mat-error>
   </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-      
-    (click)="addUser()"
-  >
+  <button mat-raised-button color="primary" (click)="addUser()" [disabled]="userForm.invalid">
     Confirm
   </button>
 </div>
