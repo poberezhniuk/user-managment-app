@@ -9,6 +9,7 @@ import { UserService } from "../user.service";
   styleUrls: ["./user-fields.component.scss"]
 })
 export class UserFieldsComponent implements OnInit {
+  profileImgURL: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
   hide = true;
   userForm: FormGroup;
   user: User = {
@@ -37,7 +38,6 @@ export class UserFieldsComponent implements OnInit {
         ]
       ]
     });
-    console.log(this.userForm);
   }
 
   get userControls() {
@@ -52,6 +52,20 @@ export class UserFieldsComponent implements OnInit {
     else if (this.userControls[type].hasError("pattern"))
       return "Only letters and numbers";
     else return;
+  }
+
+  onFileChange(event: any) {
+    const reader = new FileReader();
+    const img = event.target.files[0];
+
+    this.user.profileImg = img;
+    reader.readAsDataURL(img);
+    reader.onload = () => {
+      console.log(reader.result);
+      this.profileImgURL = reader.result;
+    };
+
+    console.log(reader.result);
   }
 
   addUser() {

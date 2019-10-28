@@ -1,4 +1,15 @@
 <div class="user-fields__container" [formGroup]="userForm">
+  <img src="{{ profileImgURL }}" height="200" class="profile-img" />
+  <label for="raised-button-file" class="choose-file__lable"
+    >Set Profile Image</label
+  >
+  <input
+    (change)="onFileChange($event)"
+    type="file"
+    id="raised-button-file"
+    class="choose-file__input"
+    accept="image/*"
+  />
   <mat-form-field>
     <input matInput formControlName="name" placeholder="Name" maxlength="30" />
     <mat-error *ngIf="userControls.name.invalid">{{
@@ -48,7 +59,12 @@
       getErrorMessage("password")
     }}</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="addUser()" [disabled]="userForm.invalid">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="addUser()"
+    [disabled]="userForm.invalid"
+  >
     Confirm
   </button>
 </div>
