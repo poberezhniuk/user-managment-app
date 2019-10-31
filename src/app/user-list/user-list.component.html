@@ -1,4 +1,4 @@
-<div class="list__container">
+<div *ngIf="isLogged; else notLogged" class="list__container">
   <mat-form-field>
     <input
       matInput
@@ -51,3 +51,7 @@
     showFirstLastButtons
   ></mat-paginator>
 </div>
+
+<ng-template #notLogged>
+  <app-message-not-autorized></app-message-not-autorized>
+</ng-template>

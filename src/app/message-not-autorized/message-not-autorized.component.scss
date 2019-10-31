@@ -1,0 +1,21 @@
+@import "../variables";
+h2 {
+  font-weight: 400;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: deepskyblue;
+  text-decoration: none;
+
+  &:visited {
+    color: $base-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

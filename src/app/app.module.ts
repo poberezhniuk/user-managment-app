@@ -31,8 +31,9 @@ import { UserFieldsComponent } from "./user-fields/user-fields.component";
 import { InMemoryDataService } from "./in-memory-data.service";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./reducers";
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditDialogComponent } from "./edit-dialog/edit-dialog.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { MessageNotAutorizedComponent } from './message-not-autorized/message-not-autorized.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     TopNavigationComponent,
     UserFieldsComponent,
     EditDialogComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MessageNotAutorizedComponent
   ],
 
   imports: [

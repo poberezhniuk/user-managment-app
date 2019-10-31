@@ -4,7 +4,7 @@
     >Set Profile Image</label
   >
   <input
-    (change)="onFileChange($event)"
+    (change)="setProfileImg($event)"
     type="file"
     id="raised-button-file"
     class="choose-file__input"
@@ -47,8 +47,8 @@
       [type]="hide ? 'password' : 'text'"
     />
     <button
-      mat-icon-button
       matSuffix
+      mat-icon-button
       (click)="hide = !hide"
       [attr.aria-label]="'Hide password'"
       [attr.aria-pressed]="hide"

@@ -10,11 +10,24 @@
     <a routerLink="/user-list" routerLinkActive="nav__active">
       <li>List</li>
     </a>
-    <a routerLink="/singup" routerLinkActive="nav__active">
-      <li>Sing Up</li>
-    </a>
-    <a routerLink="/login" routerLinkActive="nav__active">
-      <li>Log In</li>
-    </a>
+    <div *ngIf="isLogged; then logged; else notLogged"></div>
+    <ng-template #notLogged>
+      <a routerLink="/singup" routerLinkActive="nav__active">
+        <li>Sing Up</li>
+      </a>
+      <a routerLink="/login" routerLinkActive="nav__active">
+        <li>Log In</li>
+      </a>
+    </ng-template>
+    <ng-template #logged>
+      <a routerLink="/">
+        <li (click)="logOut()" class="logout">Log Out</li>
+      </a>
+      <img
+        src="{{ this.user.profileImg }}"
+        alt="pofile_img"
+        class="profile_img_small"
+      />
+    </ng-template>
   </ul>
 </nav>

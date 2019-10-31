@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from "../user";
 import { UserService } from "../user.service";
+import { any } from "prop-types";
 
 @Component({
   selector: "app-singup",
@@ -11,11 +12,11 @@ import { UserService } from "../user.service";
 export class SingupComponent implements OnInit {
   userForm: FormGroup;
   user: User = {
-    id: 1,
     name: "",
     surname: "",
     email: "",
-    password: ""
+    password: "",
+    profileImg: any
   };
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
@@ -53,10 +54,7 @@ export class SingupComponent implements OnInit {
   }
 
   addUser() {
-    if (this.userForm.invalid) {
-      return;
-    } else {
-      this.userService.addUser(this.user);
-    }
+    if (!this.userForm.invalid) this.userService.addUser(this.user);
+    return;
   }
 }

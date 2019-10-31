@@ -10,7 +10,7 @@ import { UserService } from "../user.service";
 })
 export class UserFieldsComponent implements OnInit {
   profileImgURL: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
-  hide = true;
+  hide: boolean = true;
   userForm: FormGroup;
   user: User = {
     id: 1,
@@ -54,18 +54,13 @@ export class UserFieldsComponent implements OnInit {
     else return;
   }
 
-  onFileChange(event: any) {
+  setProfileImg(event: any) {
     const reader = new FileReader();
     const img = event.target.files[0];
 
     this.user.profileImg = img;
     reader.readAsDataURL(img);
-    reader.onload = () => {
-      console.log(reader.result);
-      this.profileImgURL = reader.result;
-    };
-
-    console.log(reader.result);
+    reader.onload = () => (this.profileImgURL = reader.result);
   }
 
   addUser() {
