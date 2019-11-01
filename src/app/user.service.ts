@@ -34,7 +34,7 @@ export class UserService {
 
   addUser(user: User): Observable<{}> {
     return this.http
-      .post<User>(this.apiUrl, user, this.httpOptions)
+      .put<User>(this.apiUrl, user, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 }

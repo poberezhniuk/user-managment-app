@@ -7,7 +7,6 @@ import { UserService } from "../user.service";
   styleUrls: ["./top-navigation.component.scss"]
 })
 export class TopNavigationComponent implements OnInit {
-  profileImg: any;
   isLogged: boolean;
   constructor(private userService: UserService) {}
 
@@ -16,8 +15,6 @@ export class TopNavigationComponent implements OnInit {
   }
 
   logOut() {
-    console.log(this.isLogged);
     this.userService.changeIsLogged(false);
-    console.log(this.isLogged);
   }
 }

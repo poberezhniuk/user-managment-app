@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from "../user";
 import { UserService } from "../user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-user-fields",
@@ -13,14 +14,17 @@ export class UserFieldsComponent implements OnInit {
   hide: boolean = true;
   userForm: FormGroup;
   user: User = {
-    id: 1,
     name: "",
     surname: "",
     email: "",
     password: ""
   };
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -64,10 +68,7 @@ export class UserFieldsComponent implements OnInit {
   }
 
   addUser() {
-    if (this.userForm.invalid) {
-      return;
-    } else {
-      this.userService.addUser(this.user);
-    }
+    if (!this.userForm.invalid) this.userService.addUser(this.user);
+    return;
   }
 }

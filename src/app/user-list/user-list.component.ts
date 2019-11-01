@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { UserService } from "../user.service";
 import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
 
@@ -18,9 +18,10 @@ export class UserListComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngOnInit() {
-    this.userService
-      .getUsers()
-      .subscribe(data => (this.dataSource.data = data));
+    this.userService.getUsers().subscribe(data => {
+      this.dataSource.data = data;
+    });
+
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.userService.isLogged.subscribe(isLogged => (this.isLogged = isLogged));
