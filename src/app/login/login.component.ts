@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user.service";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -8,23 +9,37 @@ import { FormBuilder, Validators, FormGroup } from "@angular/forms";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  hide = true; // Show or hide password
-  show = true; // Switch btw inputs and spinner
-  color = "black";
-  isLogged = false;
+  hide: boolean = true; // Show or hide password
+  show: boolean = true; // Switch btw inputs and spinner
+  isLogged: boolean = false;
+  showErrorMessage: boolean = false;
+  color: string = "black";
+
   userList;
   loginForm: FormGroup;
   email: string = ""; // input email
   password: string = ""; // input password
-  constructor(private userService: UserService, private fb: FormBuilder) {}
+  constructor(
+    private userService: UserService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    // Subscribe on isLogged Subject
+    this.userService.isLogged.subscribe(isLogged => (this.isLogged = isLogged));
     // Get user list
     this.userService.getUsers().subscribe(data => (this.userList = data));
     // Form builder validators
     this.loginForm = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required, Validators.minLength(8)]]
+      email: [
+        "galileogalilei@gmail.com",
+        [Validators.required, Validators.email]
+      ],
+      password: [
+        "heliocentrism",
+        [Validators.required, Validators.minLength(8)]
+      ]
     });
   }
 
@@ -36,20 +51,22 @@ export class LoginComponent implements OnInit {
     // If userlist empty abdon operation
     if (!this.userList.length) return;
     // search user with same email and pass
+    // if pass redirect to "list" page
+
     if (this.checkEmailAndPassword()) {
-      console.log(true);
+      this.userService.changeIsLogged(true);
+      this.router.navigate(["/user-list"]);
     } else {
-      console.log(false);
+      // this.showErrorMessage = true;
     }
   }
 
   checkEmailAndPassword() {
-    const { loginFormEmail, loginFormPassword } = this.loginForm.value;
+    const { email, password } = this.loginForm.value;
 
-    return this.userList.some(user => {
-      user.email === loginFormEmail;
-      user.password === loginFormPassword;
-    });
+    return this.userList.some(
+      user => user.email === email && user.password === password
+    );
   }
 
   getErrorMessage(type) {

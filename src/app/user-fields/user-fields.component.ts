@@ -54,10 +54,7 @@ export class UserFieldsComponent implements OnInit {
   }
 
   addUser() {
-    if (this.userForm.invalid) {
-      return;
-    } else {
-      this.userService.addUser(this.user);
-    }
+    if (!this.userForm.invalid) this.userService.addUser(this.user);
+    return;
   }
 }

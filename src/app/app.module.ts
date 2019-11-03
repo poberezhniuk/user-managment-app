@@ -28,8 +28,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
 import { UserFieldsComponent } from "./user-fields/user-fields.component";
 import { InMemoryDataService } from "./in-memory-data.service";
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { StoreModule } from "@ngrx/store";
 
 @NgModule({
   declarations: [
@@ -62,14 +61,7 @@ import { reducers, metaReducers } from './reducers';
       dataEncapsulation: false
     }),
     HttpClientModule,
-    FormsModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
