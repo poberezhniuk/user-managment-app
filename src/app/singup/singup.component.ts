@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
 
 import { UserService } from "../user.service";
+import { User } from "../user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-singup",
@@ -9,9 +10,13 @@ import { UserService } from "../user.service";
   styleUrls: ["./singup.component.scss"]
 })
 export class SingupComponent {
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  addUser(user): void {
-    this.userService.addUser(user);
+  addUser(user: User): void {
+    if (user) {
+      this.userService
+        .addUser(user)
+        .subscribe(() => this.router.navigate(["/login"]));
+    }
   }
 }
