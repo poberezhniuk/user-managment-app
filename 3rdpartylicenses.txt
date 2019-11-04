@@ -87,8 +87,6 @@ THE SOFTWARE.
 
 @angular/material/button
 
-@angular/material/core
-
 @angular/material/datepicker
 
 @angular/material/dialog
@@ -97,25 +95,10 @@ THE SOFTWARE.
 
 @angular/material/icon
 
-@angular/material/paginator
-
-@angular/material/progress-spinner
-
-@angular/material/select
-
-@angular/material/sort
-
-@angular/material/table
-
-@angular/material/tooltip
-
 @angular/platform-browser
 MIT
 
 @angular/router
-MIT
-
-@ngrx/store
 MIT
 
 angular-in-memory-web-api
