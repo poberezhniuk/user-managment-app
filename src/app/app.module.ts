@@ -10,7 +10,7 @@ import { LoginComponent } from "./login/login.component";
 import { SingupComponent } from "./singup/singup.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {
   MatTableModule,
   MatSortModule,
@@ -54,8 +54,11 @@ import { InMemoryDataService } from "./in-memory-data.service";
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    HttpClientModule
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false
+    }),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

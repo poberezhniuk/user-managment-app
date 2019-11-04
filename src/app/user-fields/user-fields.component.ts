@@ -52,6 +52,7 @@ export class UserFieldsComponent implements OnInit {
     else return;
   }
 
+
   setProfileImg(event: any) {
     const reader = new FileReader();
     const img = event.target.files[0];
@@ -59,5 +60,6 @@ export class UserFieldsComponent implements OnInit {
     this.user.profileImg = img;
     reader.readAsDataURL(img);
     reader.onload = () => (this.profileImgURL = reader.result);
+
   }
 }
