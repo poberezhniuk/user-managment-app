@@ -14,10 +14,10 @@ export class UserFieldsComponent implements OnInit {
   hide: boolean = true;
   userForm: FormGroup;
   user: User = {
-    name: "",
-    surname: "",
-    email: "",
-    password: ""
+    name: "Ivan",
+    surname: "Poberezhniuk",
+    email: "email@emeil.com",
+    password: "ASfkjaslodfj$#2Ad"
   };
 
   constructor(
@@ -68,7 +68,8 @@ export class UserFieldsComponent implements OnInit {
   }
 
   addUser() {
-    if (!this.userForm.invalid) this.userService.addUser(this.user);
+    if (!this.userForm.invalid)
+      this.userService.addUser(this.user).subscribe(data => console.log(data));
     return;
   }
 }

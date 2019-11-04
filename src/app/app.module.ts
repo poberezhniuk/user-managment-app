@@ -27,6 +27,7 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
 import { UserFieldsComponent } from "./user-fields/user-fields.component";
+import { InMemoryDataService } from "./in-memory-data.service";
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { UserFieldsComponent } from "./user-fields/user-fields.component";
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientInMemoryWebApiModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     HttpClientModule
   ],
   providers: [],

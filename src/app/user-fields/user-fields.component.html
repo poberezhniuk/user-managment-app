@@ -62,13 +62,5 @@
       Min 8 symbols. Capital letters, numbers and symbols.
     </mat-error>
   </mat-form-field>
-
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="addUser()"
-    [disabled]="userForm.invalid"
-  >
-    Confirm
-  </button>
+  <ng-content select="button"></ng-content>
 </div>

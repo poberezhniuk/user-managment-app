@@ -4,11 +4,9 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable({ providedIn: "root" })
 export class UserService {
-  private apiUrl = "api/users";
+  private apiUrl = "http://localhost:1337/api/users";
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })
