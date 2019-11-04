@@ -10,7 +10,6 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-
   hide: boolean = true; // Show or hide password
   show: boolean = true; // Switch btw inputs and spinner
   isLogged: boolean = false;
