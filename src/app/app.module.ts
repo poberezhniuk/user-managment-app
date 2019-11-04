@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { UserListComponent } from "./user-list/user-list.component";
 import { LoginComponent } from "./login/login.component";
-import { HomeComponent } from "./home/home.component";
 import { SingupComponent } from "./singup/singup.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -34,7 +33,6 @@ import { InMemoryDataService } from "./in-memory-data.service";
     AppComponent,
     UserListComponent,
     LoginComponent,
-    HomeComponent,
     SingupComponent,
     TopNavigationComponent,
     UserFieldsComponent
