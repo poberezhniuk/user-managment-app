@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from "../user";
-import { UserService } from "../user.service";
 
 @Component({
   selector: "app-user-fields",
@@ -9,17 +8,17 @@ import { UserService } from "../user.service";
   styleUrls: ["./user-fields.component.scss"]
 })
 export class UserFieldsComponent implements OnInit {
-  hide = true;
+  profileImgURL: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
+  hide: boolean = true;
   userForm: FormGroup;
   user: User = {
-    id: 1,
-    name: "",
-    surname: "",
-    email: "",
-    password: ""
+    name: "Ivan",
+    surname: "Poberezhniuk",
+    email: "email@emeil.com",
+    password: "ASfkjaslodfj$#2Ad"
   };
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -53,8 +52,14 @@ export class UserFieldsComponent implements OnInit {
     else return;
   }
 
-  addUser() {
-    if (!this.userForm.invalid) this.userService.addUser(this.user);
-    return;
+
+  setProfileImg(event: any) {
+    const reader = new FileReader();
+    const img = event.target.files[0];
+
+    this.user.profileImg = img;
+    reader.readAsDataURL(img);
+    reader.onload = () => (this.profileImgURL = reader.result);
+
   }
 }

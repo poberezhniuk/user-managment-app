@@ -1,9 +1,20 @@
 <div class="user-fields__container" [formGroup]="userForm">
+  <img src="{{ profileImgURL }}" height="200" class="profile-img" />
+  <label for="raised-button-file" class="choose-file__lable"
+    >Set Profile Image</label
+  >
+  <input
+    (change)="setProfileImg($event)"
+    type="file"
+    id="raised-button-file"
+    class="choose-file__input"
+    accept="image/*"
+  />
   <mat-form-field>
     <input matInput formControlName="name" placeholder="Name" maxlength="30" />
-    <mat-error *ngIf="userControls.name.invalid">{{
-      getErrorMessage("name")
-    }}</mat-error>
+    <mat-error *ngIf="userControls.name.invalid">
+      {{ getErrorMessage("name") }}
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input
@@ -12,9 +23,9 @@
       placeholder="Surname"
       maxlength="30"
     />
-    <mat-error *ngIf="userControls.surname.invalid">{{
-      getErrorMessage("surname")
-    }}</mat-error>
+    <mat-error *ngIf="userControls.surname.invalid">
+      {{ getErrorMessage("surname") }}
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input
@@ -23,9 +34,9 @@
       placeholder="Email"
       maxlength="30"
     />
-    <mat-error *ngIf="userControls.email.invalid">{{
-      getErrorMessage("email")
-    }}</mat-error>
+    <mat-error *ngIf="userControls.email.invalid">
+      {{ getErrorMessage("email") }}
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input
@@ -35,25 +46,21 @@
       placeholder="Password"
       [type]="hide ? 'password' : 'text'"
     />
+    <mat-hint alingn="start">
+      Min 8 symbols. Capital letters, numbers and symbols.
+    </mat-hint>
     <button
-      mat-icon-button
       matSuffix
+      mat-icon-button
       (click)="hide = !hide"
       [attr.aria-label]="'Hide password'"
       [attr.aria-pressed]="hide"
     >
       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
     </button>
-    <mat-error *ngIf="userControls.password.invalid">{{
-      getErrorMessage("password")
-    }}</mat-error>
+    <mat-error *ngIf="userControls.password.invalid">
+      Min 8 symbols. Capital letters, numbers and symbols.
+    </mat-error>
   </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-    [disabled]="userForm.invalid"
-    (click)="addUser()"
-  >
-    Confirm
-  </button>
+  <ng-content select="button"></ng-content>
 </div>
