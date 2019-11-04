@@ -1,0 +1,40 @@
+@import "../variables.scss";
+
+.nav {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+
+  li {
+    padding: 1em;
+    border: 2px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      color: $base-color;
+    }
+  }
+}
+
+a {
+  color: black;
+  text-decoration-line: none;
+  &:visited {
+    color: black;
+  }
+}
+
+.nav__active {
+  color: $base-color;
+  border-bottom: 2px solid $base-color;
+  &:visited {
+    color: $base-color;
+  }
+}
