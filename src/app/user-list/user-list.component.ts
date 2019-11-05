@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { UserService } from "../user.service";
 import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
@@ -8,6 +9,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
   styleUrls: ["./user-list.component.scss"]
 })
 export class UserListComponent implements OnInit {
+
   dataSource = new MatTableDataSource([]);
   displayedColumns: string[] = ["id", "name", "surname", "email"];
 
