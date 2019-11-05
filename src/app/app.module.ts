@@ -21,7 +21,8 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
@@ -39,6 +40,7 @@ import { InMemoryDataService } from "./in-memory-data.service";
   ],
 
   imports: [
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

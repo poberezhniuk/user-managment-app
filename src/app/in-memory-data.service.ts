@@ -28,6 +28,90 @@ export class InMemoryDataService implements InMemoryDbService {
         surname: "Galilei",
         email: "galileogalilei@gmail.com",
         password: "heliocentrism"
+      },
+      {
+        id: 0,
+        name: "Albert ",
+        surname: "Einstein",
+        email: "alberteeinstein@gmail.com",
+        password: "equivalence"
+      },
+      {
+        id: 1,
+        name: "Isaac",
+        surname: "Newton",
+        email: "isaacnewton@gmail.com",
+        password: "gravitation"
+      },
+      {
+        id: 2,
+        name: "Galileo",
+        surname: "Galilei",
+        email: "galileogalilei@gmail.com",
+        password: "heliocentrism"
+      },
+      {
+        id: 0,
+        name: "Albert ",
+        surname: "Einstein",
+        email: "alberteeinstein@gmail.com",
+        password: "equivalence"
+      },
+      {
+        id: 1,
+        name: "Isaac",
+        surname: "Newton",
+        email: "isaacnewton@gmail.com",
+        password: "gravitation"
+      },
+      {
+        id: 2,
+        name: "Galileo",
+        surname: "Galilei",
+        email: "galileogalilei@gmail.com",
+        password: "heliocentrism"
+      },
+      {
+        id: 0,
+        name: "Albert ",
+        surname: "Einstein",
+        email: "alberteeinstein@gmail.com",
+        password: "equivalence"
+      },
+      {
+        id: 1,
+        name: "Isaac",
+        surname: "Newton",
+        email: "isaacnewton@gmail.com",
+        password: "gravitation"
+      },
+      {
+        id: 2,
+        name: "Galileo",
+        surname: "Galilei",
+        email: "galileogalilei@gmail.com",
+        password: "heliocentrism"
+      },
+      {
+        id: 0,
+        name: "Albert ",
+        surname: "Einstein",
+        email: "alberteeinstein@gmail.com",
+        password: "equivalence"
+      },
+      {
+        id: 1,
+        name: "Isaac",
+        surname: "Newton",
+        email: "isaacnewton@gmail.com",
+        password: "gravitation"
+      },
+      {
+        id: 2,
+        name: "Galileo",
+        surname: "Galilei",
+        email: "galileogalilei@gmail.com",
+        password: "heliocentrism"
       }
     ];
 
