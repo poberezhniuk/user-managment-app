@@ -87,6 +87,8 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/core
+
 @angular/material/datepicker
 
 @angular/material/dialog
@@ -94,6 +96,18 @@ THE SOFTWARE.
 @angular/material/form-field
 
 @angular/material/icon
+
+@angular/material/paginator
+
+@angular/material/progress-spinner
+
+@angular/material/select
+
+@angular/material/sort
+
+@angular/material/table
+
+@angular/material/tooltip
 
 @angular/platform-browser
 MIT
