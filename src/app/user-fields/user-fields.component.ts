@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from "../user";
-import { UserService } from "../user.service";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-user-fields",
@@ -14,17 +12,13 @@ export class UserFieldsComponent implements OnInit {
   hide: boolean = true;
   userForm: FormGroup;
   user: User = {
-    name: "",
-    surname: "",
-    email: "",
-    password: ""
+    name: "Ivan",
+    surname: "Poberezhniuk",
+    email: "email@emeil.com",
+    password: "ASfkjaslodfj$#2Ad"
   };
 
-  constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router
-  ) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -65,10 +59,5 @@ export class UserFieldsComponent implements OnInit {
     this.user.profileImg = img;
     reader.readAsDataURL(img);
     reader.onload = () => (this.profileImgURL = reader.result);
-  }
-
-  addUser() {
-    if (!this.userForm.invalid) this.userService.addUser(this.user);
-    return;
   }
 }
