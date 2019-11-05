@@ -4,9 +4,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { catchError } from "rxjs/operators";
 
-import { Observable, throwError, BehaviorSubject } from "rxjs";
-import { catchError } from "rxjs/operators";
-
 @Injectable({ providedIn: "root" })
 export class UserService {
   private apiUrl = "api/users";
@@ -22,7 +19,6 @@ export class UserService {
   private handleError(error: any) {
     return throwError(error);
   }
-
 
   changeIsLogged(value: boolean) {
     this.isLoggedSource.next(value);

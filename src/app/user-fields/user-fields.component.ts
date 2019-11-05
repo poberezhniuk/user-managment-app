@@ -15,7 +15,8 @@ export class UserFieldsComponent implements OnInit {
     name: "Ivan",
     surname: "Poberezhniuk",
     email: "email@emeil.com",
-    password: "ASfkjaslodfj$#2Ad"
+    password: "ASfkjaslodfj$#2Ad",
+    profileImg: this.profileImgURL
   };
 
   constructor(private fb: FormBuilder) {}
@@ -58,6 +59,23 @@ export class UserFieldsComponent implements OnInit {
 
     this.user.profileImg = img;
     reader.readAsDataURL(img);
-    reader.onload = () => (this.profileImgURL = reader.result);
+
+    reader.onload = () => {
+      this.profileImgURL = reader.result;
+      this.user.profileImg = reader.result;
+    };
+  }
+
+  getBase64Image(img) {
+    let canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    let ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    let dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   }
 }

@@ -13,21 +13,24 @@ export class InMemoryDataService implements InMemoryDbService {
         name: "Albert ",
         surname: "Einstein",
         email: "alberteeinstein@gmail.com",
-        password: "equivalence"
+        password: "equivalence",
+        profileImg: "../assets/imgs/einstein.jpg"
       },
       {
         id: 1,
         name: "Isaac",
         surname: "Newton",
         email: "isaacnewton@gmail.com",
-        password: "gravitation"
+        password: "gravitation",
+        profileImg: "../assets/imgs/isaac-newton.jpg"
       },
       {
         id: 2,
         name: "Galileo",
         surname: "Galilei",
         email: "galileogalilei@gmail.com",
-        password: "heliocentrism"
+        password: "heliocentrism",
+        profileImg: "../assets/imgs/galileo-galilei.jpg"
       }
     ];
 
