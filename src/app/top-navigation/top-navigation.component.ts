@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-top-navigation",
@@ -6,7 +7,14 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./top-navigation.component.scss"]
 })
 export class TopNavigationComponent implements OnInit {
-  constructor() {}
+  isLogged: boolean;
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userService.isLogged.subscribe(isLogged => (this.isLogged = isLogged));
+  }
+
+  logOut() {
+    this.userService.changeIsLogged(false);
+  }
 }

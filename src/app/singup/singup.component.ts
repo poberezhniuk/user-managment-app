@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
   templateUrl: "./singup.component.html",
   styleUrls: ["./singup.component.scss"]
 })
+
 export class SingupComponent {
   constructor(private userService: UserService, private router: Router) {}
 

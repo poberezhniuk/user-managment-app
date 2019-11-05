@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ViewChild } from "@angular/core";
+
 import { UserService } from "../user.service";
 import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
 
@@ -9,7 +10,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
   styleUrls: ["./user-list.component.scss"]
 })
 export class UserListComponent implements OnInit {
-
+  isLogged: boolean;
   dataSource = new MatTableDataSource([]);
   displayedColumns: string[] = ["id", "name", "surname", "email"];
 
@@ -22,8 +23,10 @@ export class UserListComponent implements OnInit {
     this.userService.getUsers().subscribe(data => {
       this.dataSource.data = data;
     });
+
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.userService.isLogged.subscribe(isLogged => (this.isLogged = isLogged));
   }
 
   applyFilter(filterValue: string) {

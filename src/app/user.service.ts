@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { User } from "./user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError, BehaviorSubject } from "rxjs";
+import { catchError } from "rxjs/operators";
 
 import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { catchError } from "rxjs/operators";
@@ -21,13 +23,15 @@ export class UserService {
     return throwError(error);
   }
 
+
+  changeIsLogged(value: boolean) {
+    this.isLoggedSource.next(value);
+  }
+
   addUser(user: User): Observable<User> {
     return this.http
       .post<User>(this.apiUrl, user, this.httpOptions)
       .pipe(catchError(this.handleError));
-  }
-  changeIsLogged(value: boolean) {
-    this.isLoggedSource.next(value);
   }
 
   getUsers(): Observable<User[]> {
