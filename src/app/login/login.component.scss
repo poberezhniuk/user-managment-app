@@ -1,0 +1,10 @@
+@import "../_variables.scss";
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: $base-color;
+}
