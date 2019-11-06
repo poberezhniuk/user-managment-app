@@ -1,8 +1,30 @@
+@import "./variables";
+
 .main-container {
   display: flex;
   justify-content: center;
   min-width: 60%;
   padding: 0 1rem 1rem 1rem;
-  background-color: white;
+  background-color: $layer-base-color;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+ul {
+  padding-left: 0;
+}
+
+header {
+  position: fixed;
+  z-index: 3333;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($layer-base-color, 0.9);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5em;
+  min-height: 92vh;
 }
