@@ -14,6 +14,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {
   MatTableModule,
   MatSortModule,
+  MatPaginatorModule,
   MatProgressSpinnerModule,
   MatDialogModule,
   MatInputModule,
@@ -21,13 +22,16 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatButtonModule,
-  MatIconModule,
-  MatPaginatorModule
+  MatIconModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 import { TopNavigationComponent } from "./top-navigation/top-navigation.component";
 import { UserFieldsComponent } from "./user-fields/user-fields.component";
 import { InMemoryDataService } from "./in-memory-data.service";
+import { EditDialogComponent } from "./edit-dialog/edit-dialog.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { MessageNotAutorizedComponent } from "./message-not-autorized/message-not-autorized.component";
+import { TableComponent } from "./user-list/table/table.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { InMemoryDataService } from "./in-memory-data.service";
     LoginComponent,
     SingupComponent,
     TopNavigationComponent,
-    UserFieldsComponent
+    UserFieldsComponent,
+    EditDialogComponent,
+    UserProfileComponent,
+    MessageNotAutorizedComponent,
+    TableComponent
   ],
 
   imports: [

@@ -57,8 +57,6 @@ export class LoginComponent implements OnInit {
     if (this.checkEmailAndPassword()) {
       this.userService.changeIsLogged(true);
       this.router.navigate(["/user-list"]);
-    } else {
-      // this.showErrorMessage = true;
     }
   }
 
