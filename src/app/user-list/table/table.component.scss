@@ -15,7 +15,7 @@ table {
 }
 
 th[mat-header-cell] {
-  background-color: lightcyan;
+  background-color: $advanced-color;
 }
 
 td[mat-cell] {
@@ -23,7 +23,7 @@ td[mat-cell] {
 }
 
 mat-paginator {
-  background-color: lightcyan;
+  background-color: $advanced-color;
 }
 
 .mat-sort-header-stem {
