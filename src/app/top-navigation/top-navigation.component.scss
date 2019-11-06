@@ -24,10 +24,10 @@
 }
 
 a {
-  color: black;
+  color: $text-base-color;
   text-decoration-line: none;
   &:visited {
-    color: black;
+    color: $text-base-color;
   }
 }
 
@@ -40,7 +40,7 @@ a {
 }
 
 .logout {
-  color: darkred;
+  color: $warning-color;
 }
 
 .profile_img_small {

@@ -13,20 +13,19 @@
   color: $base-color;
   padding: 0.5rem;
   text-align: center;
-  border: 1px solid green;
+  border: 1px solid $base-color;
   border-radius: 4px;
   background-color: transparent;
 
   &:hover {
     cursor: pointer;
-    color: white;
+    color: $text-advanced-color;
     background-color: $base-color;
   }
 }
 
 .profile-img {
   border-radius: 4px;
-  border: 1px solid green;
+  border: 1px solid $base-color;
   margin: 0 0 1rem;
 }
-

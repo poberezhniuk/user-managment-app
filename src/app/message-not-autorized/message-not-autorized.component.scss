@@ -1,14 +1,15 @@
 @import "../variables";
+
 h2 {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 p {
   text-align: center;
 }
-
+  
 a {
-  color: deepskyblue;
+  color: $advanced-color;
   text-decoration: none;
 
   &:visited {
