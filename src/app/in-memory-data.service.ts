@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
         surname: "Einstein",
         email: "alberteeinstein@gmail.com",
         password: "equivalence",
-        profileImg: "../assets/imgs/einstein.jpg"
+        profileImg: "/user-managment-app/assets/imgs/einstein.jpg"
       },
       {
         id: 1,
@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
         surname: "Newton",
         email: "isaacnewton@gmail.com",
         password: "gravitation",
-        profileImg: "../assets/imgs/isaac-newton.jpg"
+        profileImg: "/user-managment-app/assets/imgs/isaac-newton.jpg"
       },
       {
         id: 2,
@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
         surname: "Galilei",
         email: "galileogalilei@gmail.com",
         password: "heliocentrism",
-        profileImg: "../assets/imgs/galileo-galilei.jpg"
+        profileImg: "/user-managment-app/assets/imgs/galileo-galilei.jpg"
       }
     ];
 

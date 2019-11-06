@@ -50,7 +50,6 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-
     <tr
       mat-row
       *matRowDef="let row; columns: displayedColumns"
@@ -60,6 +59,6 @@
 
   <mat-paginator
     [pageSize]="5"
-    [pageSizeOptions]="[1, 5, 10, 20, 50, 100]"
+    [pageSizeOptions]="{{pageSizesArray}}"
   ></mat-paginator>
 </div>

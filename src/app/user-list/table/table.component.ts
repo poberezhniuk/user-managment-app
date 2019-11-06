@@ -10,6 +10,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from "@angular/material";
 export class TableComponent implements OnInit {
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ["id", "img", "name", "surname", "email"];
+  pageSizesArray = [1, 5, 10, 20, 50, 100];
   constructor(private userService: UserService) {}
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
