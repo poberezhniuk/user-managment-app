@@ -10,10 +10,10 @@ export class InMemoryDataService implements InMemoryDbService {
     const users: User[] = [
       {
         id: 0,
-        name: "Albert ",
+        name: "Albert",
         surname: "Einstein",
         email: "alberteeinstein@gmail.com",
-        password: "equivalence",
+        password: "Equivalence123#",
         profileImg: "/user-managment-app/assets/imgs/einstein.jpg"
       },
       {
@@ -21,7 +21,7 @@ export class InMemoryDataService implements InMemoryDbService {
         name: "Isaac",
         surname: "Newton",
         email: "isaacnewton@gmail.com",
-        password: "gravitation",
+        password: "Gravitation13#",
         profileImg: "/user-managment-app/assets/imgs/isaac-newton.jpg"
       },
       {
@@ -29,7 +29,7 @@ export class InMemoryDataService implements InMemoryDbService {
         name: "Galileo",
         surname: "Galilei",
         email: "galileogalilei@gmail.com",
-        password: "heliocentrism",
+        password: "Heliocentrism123#",
         profileImg: "/user-managment-app/assets/imgs/galileo-galilei.jpg"
       }
     ];

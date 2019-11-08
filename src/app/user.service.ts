@@ -7,7 +7,7 @@ import { catchError } from "rxjs/operators";
 @Injectable({ providedIn: "root" })
 export class UserService {
   private apiUrl = "api/users";
-  private isLoggedSource = new BehaviorSubject(false);
+  private isLoggedSource = new BehaviorSubject(true);
   isLogged = this.isLoggedSource.asObservable();
 
   httpOptions = {
@@ -27,6 +27,21 @@ export class UserService {
   addUser(user: User): Observable<User> {
     return this.http
       .post<User>(this.apiUrl, user, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  deleteUser(user: User | number): Observable<{}> {
+    // Check input type. Object or Number
+    const id = typeof user === "number" ? user : user.id;
+
+    return this.http
+      .delete<User>(`${this.apiUrl}/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
+  updateUser(user: User): Observable<{}> {
+    return this.http
+      .put<User>(this.apiUrl, user, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 

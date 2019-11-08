@@ -32,6 +32,9 @@ import { EditDialogComponent } from "./edit-dialog/edit-dialog.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { MessageNotAutorizedComponent } from "./message-not-autorized/message-not-autorized.component";
 import { TableComponent } from "./user-list/table/table.component";
+import { AddUserComponent } from "./add-user/add-user.component";
+import { DeleteUserDialogComponent } from "./delete-user-dialog/delete-user-dialog.component";
+import { UpdateUserDialogComponent } from "./update-user-dialog/update-user-dialog.component";
 
 @NgModule({
   declarations: [
@@ -44,10 +47,14 @@ import { TableComponent } from "./user-list/table/table.component";
     EditDialogComponent,
     UserProfileComponent,
     MessageNotAutorizedComponent,
-    TableComponent
+    TableComponent,
+    AddUserComponent,
+    DeleteUserDialogComponent,
+    UpdateUserDialogComponent
   ],
 
   imports: [
+    MatDialogModule,
     MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
@@ -64,13 +71,18 @@ import { TableComponent } from "./user-list/table/table.component";
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    HttpClientModule,
+    FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
-    }),
-    HttpClientModule,
-    FormsModule
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddUserComponent,
+    DeleteUserDialogComponent,
+    UpdateUserDialogComponent
+  ]
 })
 export class AppModule {}

@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
 
   userList;
   loginForm: FormGroup;
-  email: string = ""; // input email
-  password: string = ""; // input password
+
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
         [Validators.required, Validators.email]
       ],
       password: [
-        "heliocentrism",
+        "Heliocentrism123#",
         [Validators.required, Validators.minLength(8)]
       ]
     });

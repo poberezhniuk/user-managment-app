@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { User } from "../user";
 
@@ -8,14 +8,16 @@ import { User } from "../user";
   styleUrls: ["./user-fields.component.scss"]
 })
 export class UserFieldsComponent implements OnInit {
+  @Input() userInput: User;
+
   profileImgURL: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
   hide: boolean = true;
   userForm: FormGroup;
   user: User = {
-    name: "Ivan",
-    surname: "Poberezhniuk",
-    email: "email@emeil.com",
-    password: "ASfkjaslodfj$#2Ad",
+    name: "",
+    surname: "",
+    email: "",
+    password: "",
     profileImg: this.profileImgURL
   };
 
@@ -23,11 +25,12 @@ export class UserFieldsComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = this.fb.group({
-      name: [this.user.name, Validators.required],
-      surname: [this.user.surname, Validators.required],
-      email: [this.user.email, [Validators.required, Validators.email]],
+      id: null,
+      name: ["", Validators.required],
+      surname: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
       password: [
-        this.user.password,
+        "",
         [
           Validators.required,
           Validators.minLength(8),
@@ -35,8 +38,13 @@ export class UserFieldsComponent implements OnInit {
             "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
           )
         ]
-      ]
+      ],
+      profileImg: this.profileImgURL
     });
+
+    if (this.userInput) {
+      this.userForm.patchValue(this.userInput);
+    }
   }
 
   get userControls() {
@@ -62,20 +70,7 @@ export class UserFieldsComponent implements OnInit {
 
     reader.onload = () => {
       this.profileImgURL = reader.result;
-      this.user.profileImg = reader.result;
+      this.userForm.patchValue({ profileImg: reader.result });
     };
-  }
-
-  getBase64Image(img) {
-    let canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    let ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    let dataURL = canvas.toDataURL("image/png");
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   }
 }

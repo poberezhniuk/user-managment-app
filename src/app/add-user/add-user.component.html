@@ -1,0 +1,14 @@
+<app-user-fields #userFields>
+  <div class="btn__container">
+    <button
+      color="primary"
+      mat-raised-button
+      disabled="{{ userFields.userForm.invalid }}"
+      (click)="addUser(userFields.userForm.value)"
+      [mat-dialog-close]="true"
+    >
+      Comfirm
+    </button>
+    <button mat-raised-button (click)="cancel()" color="warn" [mat-dialog-close]="false">Cancel</button>
+  </div>
+</app-user-fields>
