@@ -24,6 +24,7 @@ export class TableComponent implements OnInit {
     "name",
     "surname",
     "email",
+    "password",
     "controls"
   ];
   pageSizesArray = [1, 5, 10, 20, 50, 100];

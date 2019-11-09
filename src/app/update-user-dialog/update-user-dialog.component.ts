@@ -13,7 +13,6 @@ export class UpdateUserDialogComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private dialogRef: MatDialogRef<UpdateUserDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data
   ) {
     this.user = { ...data.user };

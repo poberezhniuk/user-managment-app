@@ -7,8 +7,15 @@
       (click)="addUser(userFields.userForm.value)"
       [mat-dialog-close]="true"
     >
-      Comfirm
+      Add
     </button>
-    <button mat-raised-button (click)="cancel()" color="warn" [mat-dialog-close]="false">Cancel</button>
+    <button
+      mat-raised-button
+      (click)="cancel()"
+      color="warn"
+      [mat-dialog-close]="false"
+    >
+      Cancel
+    </button>
   </div>
 </app-user-fields>

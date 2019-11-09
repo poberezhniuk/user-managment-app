@@ -1,8 +1,6 @@
 @import "./variables";
 
 .main-container {
-  display: flex;
-  justify-content: center;
   min-width: 60%;
   padding: 0 1rem 1rem 1rem;
   background-color: $layer-base-color;

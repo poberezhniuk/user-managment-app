@@ -7,7 +7,7 @@ import { catchError } from "rxjs/operators";
 @Injectable({ providedIn: "root" })
 export class UserService {
   private apiUrl = "api/users";
-  private isLoggedSource = new BehaviorSubject(true);
+  private isLoggedSource = new BehaviorSubject(false);
   isLogged = this.isLoggedSource.asObservable();
 
   httpOptions = {

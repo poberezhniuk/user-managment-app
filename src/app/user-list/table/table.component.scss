@@ -2,7 +2,6 @@
 
 .table {
   &__container {
-    min-width: 60vw;
     display: flex;
     flex-direction: column;
   }
@@ -33,6 +32,9 @@
 
 .mat-elevation-z8 {
   box-shadow: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 table {

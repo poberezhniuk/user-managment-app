@@ -1,51 +1,51 @@
-<h1>Log In</h1>
-<div
-  class="login__container"
-  *ngIf="show; else spinner"
-  [formGroup]="loginForm"
->
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Email"
-      maxlength="30"
-      formControlName="email"
-    />
-    <mat-error *ngIf="loginControls.email.invalid">{{
-      getErrorMessage("email")
-    }}</mat-error>
-  </mat-form-field>
+<section>
+  <h1>Log In</h1>
 
-  <mat-form-field>
-    <input
-      matInput
-      maxlength="30"
-      placeholder="Password"
-      formControlName="password"
-      [type]="hide ? 'password' : 'text'"
-    />
-    <mat-error *ngIf="loginControls.password.invalid">{{
-      getErrorMessage("password")
-    }}</mat-error>
+  <div class="login__container" [formGroup]="loginForm">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Email"
+        maxlength="30"
+        formControlName="email"
+      />
+      <mat-error *ngIf="loginControls.email.invalid">{{
+        getErrorMessage("email")
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        maxlength="30"
+        placeholder="Password"
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <mat-error *ngIf="loginControls.password.invalid">{{
+        getErrorMessage("password")
+      }}</mat-error>
+      <button
+        matSuffix
+        mat-icon-button
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
     <button
-      matSuffix
-      mat-icon-button
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
+      mat-raised-button
+      color="primary"
+      (click)="onLogin()"
+      [disabled]="loginForm.invalid"
     >
-      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      Confirm
     </button>
-  </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="onLogin()"
-    [disabled]="loginForm.invalid"
-  >
-    Confirm
-  </button>
-</div>
-<ng-template #spinner>
-  <mat-spinner [color]="color"></mat-spinner>
-</ng-template>
+  </div>
+
+  <p *ngIf="isInvalid" class="invalid-login-message">
+    Invalid email or password.
+  </p>
+</section>

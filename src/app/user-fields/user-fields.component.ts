@@ -10,7 +10,7 @@ import { User } from "../user";
 export class UserFieldsComponent implements OnInit {
   @Input() userInput: User;
 
-  profileImgURL: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
+  defaultProfileImg: any = "assets/imgs/default-user-icon.jpg"; // url to default profile img
   hide: boolean = true;
   userForm: FormGroup;
   user: User = {
@@ -18,7 +18,7 @@ export class UserFieldsComponent implements OnInit {
     surname: "",
     email: "",
     password: "",
-    profileImg: this.profileImgURL
+    profileImg: this.defaultProfileImg
   };
 
   constructor(private fb: FormBuilder) {}
@@ -39,7 +39,7 @@ export class UserFieldsComponent implements OnInit {
           )
         ]
       ],
-      profileImg: this.profileImgURL
+      profileImg: this.defaultProfileImg
     });
 
     if (this.userInput) {
@@ -69,7 +69,7 @@ export class UserFieldsComponent implements OnInit {
     reader.readAsDataURL(img);
 
     reader.onload = () => {
-      this.profileImgURL = reader.result;
+      this.defaultProfileImg = reader.result;
       this.userForm.patchValue({ profileImg: reader.result });
     };
   }

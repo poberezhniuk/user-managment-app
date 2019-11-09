@@ -4,6 +4,12 @@ h1 {
   color: $base-color;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .comfirm_button {
   margin-top: 1rem;
 }
