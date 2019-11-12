@@ -2,7 +2,7 @@
   <h1>Sing Up</h1>
   <app-user-fields #userFields>
     <button
-      disabled="{{ userFields.userForm.invalid }}"
+      [disabled]="userFields.userForm.invalid"
       class="comfirm_button"
       mat-raised-button
       color="primary"

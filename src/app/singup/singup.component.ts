@@ -13,10 +13,8 @@ export class SingupComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   addUser(user: User): void {
-    if (user) {
-      this.userService
-        .addUser(user)
-        .subscribe(() => this.router.navigate(["/login"]));
-    }
+    this.userService
+      .addUser(user)
+      .subscribe(() => this.router.navigate(["/login"]));
   }
 }
