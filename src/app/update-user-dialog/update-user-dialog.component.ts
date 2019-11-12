@@ -20,8 +20,6 @@ export class UpdateUserDialogComponent implements OnInit {
   confirm(user: User) {
     if (user) {
       this.userService.updateUser(user).subscribe();
-    } else {
-      return;
     }
   }
 
