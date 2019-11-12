@@ -3,7 +3,7 @@
     <button
       color="primary"
       mat-raised-button
-      disabled="{{ userFields.userForm.invalid }}"
+      [disabled]="userFields.userForm.invalid"
       (click)="addUser(userFields.userForm.value)"
       [mat-dialog-close]="true"
     >

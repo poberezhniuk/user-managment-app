@@ -1,7 +1,7 @@
+@import '~../mixins';
+
 .btn__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
   width: 100%;
 }
 

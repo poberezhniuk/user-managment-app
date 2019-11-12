@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA } from "@angular/material";
 import { UserService } from "../user.service";
 import { User } from "../user";
 
@@ -11,20 +11,17 @@ import { User } from "../user";
 export class UpdateUserDialogComponent implements OnInit {
   user: User;
 
-  constructor(
-    private userService: UserService,
-    @Inject(MAT_DIALOG_DATA) data
-  ) {
+  constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) data) {
     this.user = { ...data.user };
   }
 
   ngOnInit() {}
 
   confirm(user: User) {
-    if (false) {
-      return;
-    } else {
+    if (user) {
       this.userService.updateUser(user).subscribe();
+    } else {
+      return;
     }
   }
 

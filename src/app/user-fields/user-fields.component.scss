@@ -1,8 +1,8 @@
 @import "../_variables";
+@import "~../mixins";
 
 .user-fields__container {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
 }
 
 .choose-file__input {

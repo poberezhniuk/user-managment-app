@@ -1,7 +1,7 @@
 <app-user-fields [userInput]="user" #userFields mat-dialog-contetnt>
   <div class="btn__container">
     <button
-      disabled="{{ userFields.userForm.invalid }}"
+      [disabled]="userFields.userForm.invalid"
       color="primary"
       mat-raised-button
       (click)="confirm(userFields.userForm.value)"

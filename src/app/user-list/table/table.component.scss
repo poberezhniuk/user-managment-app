@@ -1,14 +1,13 @@
-@import "../../variables";
+@import "~../../variables";
+@import "~../../mixins";
 
 .table {
   &__container {
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
   }
 
   &__tools--container {
-    display: flex;
-    flex-direction: row;
+    @include flex();
     padding: 0.5rem 24px 0 0;
   }
 
@@ -21,8 +20,7 @@
   }
 
   &__controls-container {
-    display: flex;
-    justify-content: flex-end;
+    @include flex(row, flex-end);
 
     button {
       margin-left: 1rem;
@@ -44,7 +42,7 @@ table {
 tr {
   &:hover {
     cursor: pointer;
-    background-color: rgba(211, 211, 211, 0.336);
+    background-color: $hover-color;
   }
 }
 
