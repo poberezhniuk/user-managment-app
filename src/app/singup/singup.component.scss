@@ -1,13 +1,12 @@
-@import "../_variables.scss";
+@import "~../_variables";
+@import "~../mixins";
 
 h1 {
   color: $base-color;
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column, $align: center);
 }
 
 .comfirm_button {

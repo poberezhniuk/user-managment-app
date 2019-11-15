@@ -1,4 +1,4 @@
-@import "../_variables";
+@import "~../_variables";
 @import "~../mixins";
 
 .user-fields__container {
@@ -28,4 +28,5 @@
   border-radius: 4px;
   border: 1px solid $base-color;
   margin: 0 0 1rem;
+  max-width: 205px;
 }

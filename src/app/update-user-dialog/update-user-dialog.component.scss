@@ -1,7 +1,8 @@
 @import '~../mixins';
 
 .btn__container {
-  @include flex();
+  @include flex($align: center);
+  padding-top: 1rem;
   width: 100%;
 }
 
