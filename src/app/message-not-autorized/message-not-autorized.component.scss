@@ -1,15 +1,18 @@
-@import "../variables";
+@import "~../variables";
+@import "~../mixins";
 
 h2 {
   font-weight: 500;
+  color: $warning-color;
+  margin-bottom: 0.5rem;
 }
 
 p {
   text-align: center;
 }
-  
+
 a {
-  color: $advanced-color;
+  color: $base-color;
   text-decoration: none;
 
   &:visited {
@@ -19,4 +22,8 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+section {
+  @include flex(column, $align: center);
 }

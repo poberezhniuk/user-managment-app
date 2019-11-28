@@ -1,5 +1,5 @@
 <div class="user-fields__container" [formGroup]="userForm">
-  <img src="{{ profileImgURL }}" height="200" class="profile-img" />
+  <img [src]="userForm.value.profileImg" height="200" class="profile-img" />
   <label for="raised-button-file" class="choose-file__lable"
     >Set Profile Image</label
   >
@@ -62,5 +62,5 @@
       Min 8 symbols. Capital letters, numbers and symbols.
     </mat-error>
   </mat-form-field>
-  <ng-content select="button"></ng-content>
+  <ng-content></ng-content>
 </div>

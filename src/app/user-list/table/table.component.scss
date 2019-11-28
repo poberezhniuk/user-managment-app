@@ -1,29 +1,53 @@
-@import "../../variables";
+@import "~../../variables";
+@import "~../../mixins";
 
-.list__container {
-  min-width: 40vw;
-  display: flex;
-  flex-direction: column;
+.table {
+  &__container {
+    @include flex(column);
+  }
+
+  &__tools--container {
+    @include flex();
+    padding: 0.5rem 24px 0 0;
+  }
+
+  &__search {
+    width: 100%;
+  }
+
+  &__add-user {
+    margin: 0.5rem 0 1.25rem 1rem;
+  }
+
+  &__controls-container {
+    @include flex(row, flex-end);
+
+    button {
+      margin-left: 1rem;
+    }
+  }
 }
 
 .mat-elevation-z8 {
   box-shadow: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 table {
   width: 100%;
 }
 
-th[mat-header-cell] {
-  background-color: $advanced-color;
+tr {
+  &:hover {
+    cursor: pointer;
+    background-color: $hover-color;
+  }
 }
 
 td[mat-cell] {
   padding: 0 0.1rem;
-}
-
-mat-paginator {
-  background-color: $advanced-color;
 }
 
 .mat-sort-header-stem {

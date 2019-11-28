@@ -1,0 +1,11 @@
+@import '~../mixins';
+
+.btn__container {
+  @include flex($align: center);
+  padding-top: 1rem;
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}

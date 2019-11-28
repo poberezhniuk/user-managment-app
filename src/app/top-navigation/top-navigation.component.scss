@@ -1,14 +1,13 @@
-@import "../variables.scss";
+@import "~../variables";
+@import "~../mixins";
 
 .nav {
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  @include flex();
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
 }
 
 .nav-list {
-  display: flex;
-  flex-direction: row;
+  @include flex();
   list-style: none;
   margin: 0;
 

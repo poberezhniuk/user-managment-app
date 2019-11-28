@@ -1,0 +1,15 @@
+@import "~../mixins";
+
+.mat-dialog-content-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn__container {
+  @include flex(row, space-between);
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}

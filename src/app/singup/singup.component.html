@@ -1,11 +1,14 @@
-<h1>Sing Up</h1>
-<app-user-fields #userFields>
-  <button
-    class="comfirm_button"
-    mat-raised-button
-    color="primary"
-    (click)="addUser(userFields.user)"
-  >
-    Confirm
-  </button>
-</app-user-fields>
+<section>
+  <h1>Sing Up</h1>
+  <app-user-fields #userFields>
+    <button
+      [disabled]="userFields.userForm.invalid"
+      class="comfirm_button"
+      mat-raised-button
+      color="primary"
+      (click)="addUser(userFields.userForm.value)"
+    >
+      Confirm
+    </button>
+  </app-user-fields>
+</section>

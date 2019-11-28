@@ -1,0 +1,10 @@
+@import '~../mixins';
+
+.btn__container {
+  @include flex();
+  padding-top: 0.5rem;
+}
+
+button {
+  margin: 0.5rem 0 0 0;
+}

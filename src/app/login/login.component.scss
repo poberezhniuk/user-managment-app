@@ -1,10 +1,20 @@
-@import "../_variables.scss";
+@import "~../_variables";
+@import "~../mixins";
 
 .login__container {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
+}
+
+.invalid-login-message {
+  color: $warning-color;
+  font-weight: 500;
+  font-size: 1.1em;
 }
 
 h1 {
   color: $base-color;
+}
+
+section {
+  @include flex(column, $align: center);
 }

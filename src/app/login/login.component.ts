@@ -14,12 +14,11 @@ export class LoginComponent implements OnInit {
   show: boolean = true; // Switch btw inputs and spinner
   isLogged: boolean = false;
   showErrorMessage: boolean = false;
-  color: string = "black";
+  isInvalid: boolean = false;
 
   userList;
   loginForm: FormGroup;
-  email: string = ""; // input email
-  password: string = ""; // input password
+
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
         [Validators.required, Validators.email]
       ],
       password: [
-        "heliocentrism",
+        "Heliocentrism12312$$",
         [Validators.required, Validators.minLength(8)]
       ]
     });
@@ -57,6 +56,8 @@ export class LoginComponent implements OnInit {
     if (this.checkEmailAndPassword()) {
       this.userService.changeIsLogged(true);
       this.router.navigate(["/user-list"]);
+    } else {
+      this.isInvalid = true;
     }
   }
 

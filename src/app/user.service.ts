@@ -30,6 +30,21 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
+  deleteUser(user: User | number): Observable<{}> {
+    // Check input type. Object or Number
+    const id = typeof user === "number" ? user : user.id;
+
+    return this.http
+      .delete<User>(`${this.apiUrl}/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
+  updateUser(user: User): Observable<{}> {
+    return this.http
+      .put<User>(this.apiUrl, user, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
   getUsers(): Observable<User[]> {
     return this.http
       .get<User[]>(this.apiUrl)
